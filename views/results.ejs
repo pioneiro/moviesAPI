@@ -41,7 +41,11 @@
 						</a>
 					</div>
 					<div class="col-sm-12 col-md-8">
-						<h1 class="display-4"><strong>Title</strong>: <%= movie.Title.toUpperCase() %></h1>
+						<h1 class="display-4"><strong>Title</strong>: 
+							<a href="/details?movieID=<%= movie.imdbID %>" class="text-dark">
+								<%= movie.Title.toUpperCase() %>
+							</a>
+						</h1>
 						<h2><strong>Year</strong>: <%= movie.Year %></h2>
 						<h3><strong>Type</strong>: <%= movie.Type.toUpperCase() %></h3>
 					</div>
@@ -51,7 +55,7 @@
 			<div class="d-flex pb-5">
 				<div class="btn-group mx-auto" role="group" aria-label="First group">
 					
-					<% if(x >= 10) { %>
+					<% if(x >= 5) { %>
 						<a href="/results?q=<%= srcv.q %>&type=<%= srcv.type %>&page=<%= x-1 %>">
 							<button type="button" class="btn btn-outline-secondary"><</button>
 						</a>	
